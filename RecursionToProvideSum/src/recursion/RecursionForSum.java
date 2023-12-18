@@ -10,22 +10,22 @@ public class RecursionForSum {
 	public static void recursionForSum(int numOfRecurse) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please enter you first number: ");
-		int sum = 0;
+		double sum = 0;
 		
-		// check to make sure user enter a valid integer
-		while (!scanner.hasNextInt()) {
-			System.out.println("Plase enter a valid integer: ");
+		// check to make sure user enter a valid number
+		while (!scanner.hasNextDouble()) {
+			System.out.println("Please enter a valid number: ");
 			scanner.next();
 		}
 		
-		sum += scanner.nextInt();
+		sum += scanner.nextDouble();
 		
 		//recursion call to helper method
 		recursionForSumHelper(numOfRecurse - 1, sum, scanner );
 	}
 	
 	// recursion sum helper method 
-	private static void recursionForSumHelper(int currDepth, int sum, Scanner scanner) {
+	private static void recursionForSumHelper(int currDepth, double sum, Scanner scanner) {
 		// base case
 		if (currDepth == 0) {
 			System.out.println("The sum is " + sum + "!");
@@ -34,12 +34,12 @@ public class RecursionForSum {
 			System.out.println("Please enter the next number: ");
 			
 			// check for valid integer input
-			while (!scanner.hasNextInt()) {
-				System.out.println("Plase enter a valid integer: ");
+			while (!scanner.hasNextDouble()) {
+				System.out.println("Please enter a valid number: ");
 				scanner.next();
 			}
 			
-			sum += scanner.nextInt();
+			sum += scanner.nextDouble();
 			
 			// recursion call
 			recursionForSumHelper(currDepth - 1, sum, scanner);
